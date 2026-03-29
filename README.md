@@ -1,16 +1,107 @@
-# React + Vite
+# 📋 Task Manager App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A full-stack Task Management application built with a scalable backend and a simple frontend UI. This project demonstrates authentication, role-based access control, and CRUD operations.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Features
 
-## React Compiler
+### 🔐 Authentication
+- User Registration & Login
+- Password hashing using bcrypt
+- JWT-based authentication
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 🛡️ Authorization
+- Role-based access (User / Admin)
+- Protected routes using middleware
 
-## Expanding the ESLint configuration
+### 📦 Task Management
+- Create, Read, Update, Delete (CRUD) tasks
+- Users can manage their own tasks
+- Admin can view all tasks
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 🎨 Frontend
+- Login & Register UI
+- Dashboard with task management
+- Dark Mode 🌙
+- Toast Notifications 🔔
+- Responsive & clean UI
+
+---
+
+## 🛠️ Tech Stack
+
+### Backend
+- Node.js
+- Express.js
+- MongoDB (Mongoose)
+- JWT Authentication
+- bcrypt
+
+### Frontend
+- React (Vite)
+- Axios
+- CSS (custom styling)
+
+---
+
+## 📁 Project Structure
+
+task-manager-app/
+│
+├── backend/
+│ ├── src/
+│ │ ├── controllers/
+│ │ ├── models/
+│ │ ├── routes/
+│ │ ├── middleware/
+│ │ └── app.js
+│ └── package.json
+│
+└── frontend/
+├── src/
+│ ├── pages/
+│ └── App.jsx
+└── package.json
+
+
+---
+
+
+---
+
+## ⚙️ Setup Instructions
+
+### 1️⃣ Clone Repository
+```bash
+git clone <your-repo-link>
+cd task-manager-app
+
+2️⃣ Backend Setup
+cd backend
+npm install
+npm run dev
+
+👉 Runs on: http://localhost:5000
+
+3️⃣ Frontend Setup
+cd frontend
+npm install
+npm run dev
+
+👉 Runs on: http://localhost:5173
+
+🔑 API Endpoints
+Auth
+POST /api/v1/auth/register → Register user
+POST /api/v1/auth/login → Login user
+Tasks (Protected)
+GET /api/v1/tasks → Get tasks
+POST /api/v1/tasks → Create task
+PUT /api/v1/tasks/:id → Update task
+DELETE /api/v1/tasks/:id → Delete task
+🔐 Authentication Flow
+User logs in → receives JWT token
+Token stored in frontend (localStorage)
+Token sent in headers for protected routes:
+Authorization: Bearer <token>
